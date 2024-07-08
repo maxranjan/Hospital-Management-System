@@ -20,12 +20,15 @@ public class HospitalManagementSystem {
             Connection connection = DriverManager.getConnection(url, username, password);
             Patient patient = new Patient(connection, scanner);
             Doctor doctor = new Doctor(connection);
+            Emp emp = new Emp(connection, scanner);
             while (true) {
                 System.out.println("HOSPITAL MANAGEMENT SYSTEM");
                 System.out.println("1. Add Patient");
                 System.out.println("2. View Patients");
                 System.out.println("3. View Doctors");
-                System.out.println("4. Exit");
+                System.out.println("4. Add Employee");
+                System.out.println("5. View Employees");
+                System.out.println("6. Exit");
                 System.out.println();
                 System.out.print("Enter Your Choice :- ");
                 int choice = scanner.nextInt();
@@ -46,9 +49,18 @@ public class HospitalManagementSystem {
                         System.out.println();
                         break;
                     case 4:
+                        emp.addEmp();
+                        System.out.println();
+                        break;
+                    case 5:
+                        emp.viewEmployee();
+                        System.out.println();
+                        break;
+
+                    case 6:
                         System.out.print(" ! ! !  Developed By Nicky Ranjan  ! ! !");
                         return;
-                
+
                     default:
                         System.out.println("Enter Valid Choice");
                         break;
