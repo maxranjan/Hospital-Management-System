@@ -60,7 +60,6 @@ public class HospitalManagementSystem {
                     case 6:
                         System.out.print(" ! ! !  Developed By Nicky Ranjan  ! ! !");
                         return;
-
                     default:
                         System.out.println("Enter Valid Choice");
                         break;

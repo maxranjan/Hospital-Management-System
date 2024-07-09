@@ -6,9 +6,7 @@ import java.util.Scanner;
 
 public class Patient {
     private Connection connection;
-    
     private Scanner scanner;
-
     Patient(Connection connection, Scanner scanner) {
         this.connection = connection;
         this.scanner = scanner;
@@ -16,11 +14,11 @@ public class Patient {
 
     public void addPatient() {
         System.out.print("Enter Patient Name:- ");
-        String name = scanner.next();
+        String name = new java.util.Scanner(System.in).nextLine();
         System.out.print("Enter Patient Age:- ");
         int age = scanner.nextInt();
         System.out.print("Enter Patient Gender:- ");
-        String gender = scanner.next();
+        String gender = new java.util.Scanner(System.in).nextLine();
 
         try {
 
@@ -32,9 +30,11 @@ public class Patient {
             preparedStatement.setString(3, gender);
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
-                System.out.println(" Patient Added Successfully");
+                System.out.println();
+                System.out.println("Patient Added Successfully");
             } else {
-                System.out.println(" Failed To Add Patient");
+                System.out.println();
+                System.out.println("Failed To Add Patient");
             }
 
         } catch (SQLException e) {
@@ -65,4 +65,5 @@ public class Patient {
             e.printStackTrace();
         }
     }
+
 }

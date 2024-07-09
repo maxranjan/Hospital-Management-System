@@ -16,13 +16,13 @@ public class Emp {
 
     public void addEmp() {
         System.out.print("Enter Employee Name:- ");
-        String name = scanner.next();
+        String name = new java.util.Scanner(System.in).nextLine();
         System.out.print("Enter Employee Age:- ");
         int age = scanner.nextInt();
         System.out.print("Enter Employee Gender:- ");
-        String gender = scanner.next();
+        String gender = new java.util.Scanner(System.in).nextLine();
         System.out.print("Enter Employee Role:- ");
-        String role = scanner.next();
+        String role = new java.util.Scanner(System.in).nextLine();
 
         try {
 
@@ -35,9 +35,11 @@ public class Emp {
             preparedStatement.setString(4, role);
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows > 0) {
-                System.out.println(" Employee Added Successfully");
+                System.out.println();
+                System.out.println("Employee Added Successfully");
             } else {
-                System.out.println(" Failed To Add Employee");
+                System.out.println();
+                System.out.println("Failed To Add Employee");
             }
 
         } catch (SQLException e) {
