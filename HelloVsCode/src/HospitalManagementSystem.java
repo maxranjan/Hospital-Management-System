@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class HospitalManagementSystem {
     private static final String url = "jdbc:mysql://127.0.0.2:3306/hospital";
     private static final String username = "root";
-    private static final String password = "xxxxxxxxx";
+    private static final String password = "Nic@12345";
 
     public static void main(String[] args) {
         try {
@@ -28,7 +28,8 @@ public class HospitalManagementSystem {
                 System.out.println("3. View Doctors");
                 System.out.println("4. Add Employee");
                 System.out.println("5. View Employees");
-                System.out.println("6. Exit");
+                System.out.println("6. View Patients By ID");
+                System.out.println("7. Exit");
                 System.out.println();
                 System.out.print("Enter Your Choice :- ");
                 int choice = scanner.nextInt();
@@ -58,8 +59,13 @@ public class HospitalManagementSystem {
                         break;
 
                     case 6:
+                        patient.viewPatientById();
+                        System.out.println();
+                        break;
+                    case 7:
                         System.out.print(" ! ! !  Developed By Nicky Ranjan  ! ! !");
                         return;
+
                     default:
                         System.out.println("Enter Valid Choice");
                         break;
